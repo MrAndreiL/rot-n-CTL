@@ -42,7 +42,7 @@ func usage() string {
 
 // encodingRange breaks -n=N into runes and builds N as int.
 func encodingRange(arg string) (int, error) {
-	if arg[0] != '-' || arg[1] != 'n' || arg[2] != '=' {
+	if arg[0] != '-' || arg[1] != 'n'|| arg[2] != '=' {
 		err := errors.New("Invalid command")
 		return 0, err
 	}
@@ -56,7 +56,7 @@ func encodingRange(arg string) (int, error) {
 
 	for i := 3; i < len(r); i++ {
 		if !('0' <= arg[i] && arg[i] <= '9') {
-			err := errors.New("N is not a valid integer")
+			err := errors.New("N is not a valid value")
 			return 0, err
 		}
 		N = N * 10 + (int(r[i]) - '0')
